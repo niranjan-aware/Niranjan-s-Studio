@@ -15,14 +15,14 @@ import intellij from "../assets/IntelliJ IDEA.svg";
 import VS from "../assets/Visual Studio Code (VS Code).svg"
 import splunk from "../assets/splunk.svg"
 import springboot from "../assets/springboot.svg"
-import java from "../assets/java.svg"
+import Java from "../assets/Java.svg"
 import cpp from "../assets/C++ (CPlusPlus).svg"
 
 export default function Skills() {
  const [selectedCategory, setSelectedCategory] = useState("Languages");
 
   const skillsData = [
-    { src: java, alt: "Java", category: "Languages", level: 75 },
+    { src: Java, alt: "Java", category: "Languages", level: 75 },
     { src: cpp, alt: "C++", category: "Languages", level: 85 },
     { src: jsIcon, alt: "JavaScript", category: "Languages", level: 70 },
     { src: html5Icon, alt: "HTML5", category: "Languages", level: 80 },
