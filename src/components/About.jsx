@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function About() {
   return (
-    <section className="about max-w-7xl xs:mt-16 p-5">
-      <div className="about-container  flex xs:flex-col md:flex-row items-center justify-center xs:gap-10 md:gap-20">
+    <section className="about max-w-7xl  flex items-center justify-center">
+      <div className="about-container  flex xs:flex-col md:flex-row items-center justify-center gap-20">
         <div className="image  ">
           <img src="src/assets/NiranjanSinhagad.jpeg" alt="" className="abit-img rounded-full xs:w-64 xs:h-64 lg:w-96 lg:h-96 md:w-64 md:h-64" />
         </div>

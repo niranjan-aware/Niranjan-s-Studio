@@ -6,7 +6,7 @@ import { SiGmail } from "react-icons/si";
 
 export default function Hero() {
   return (
-    <div className="hero-container relative max-w-7xl flex xs:flex-col xs:space-y-10 space-y-0 sm:flex-row-reverse md:h-screen items-center justify-evenly mx-auto xs:pb-10 sm:pb-0">
+    <div className="hero-container min-h-screen relative max-w-7xl flex xs:flex-col xs:space-y-10 space-y-0 sm:flex-row-reverse md:h-screen items-center justify-evenly mx-auto ">
       <div className="hero-bg-img xs:w-80 xs:h-80 md:w-auto md:h-auto drop-shadow-2xl shadow-white">
         <img src="src/assets/hero-bg.svg" alt="HeroBG" />
       </div>
@@ -43,7 +43,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="social-media-btn absolute xs:bottom-5 xs:right-5  md:bottom-52 md:right-5 flex flex-col items-center justify-center space-y-4">
+      <div className="social-media-btn absolute xs:bottom-40 xs:right-5  md:bottom-52 md:right-5 flex flex-col items-center justify-center space-y-4">
         <a
           href="https://www.linkedin.com/in/niranjan-aware-673019211/"
           target="_blank"
