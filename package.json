@@ -1,4 +1,5 @@
 {
+  "homepage": "https://niranjan-aware.github.io/Niranjan-s-Studio",
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
@@ -7,6 +8,8 @@
     "dev": "vite",
      "build": "vite build",
   "start": "vite preview --port 8080",
+  "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },

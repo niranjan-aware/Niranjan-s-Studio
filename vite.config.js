@@ -4,8 +4,17 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/',
-  plugins: [react(),],
+  base: '/Niranjan-s-Studio/',
+  plugins: [react(), tailwindcss()],
+   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name]-[hash][extname]'
+      }
+    }
+  },
   server: {
     host: '0.0.0.0', // <-- this is the key
     port: 5173,       // optional: change if you want
