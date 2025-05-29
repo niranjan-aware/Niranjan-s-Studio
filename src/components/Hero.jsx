@@ -6,7 +6,7 @@ import { SiGmail } from "react-icons/si";
 
 export default function Hero() {
   return (
-    <div className="hero-container min-h-screen relative max-w-7xl flex xs:flex-col xs:space-y-10 space-y-0 sm:flex-row-reverse md:h-screen items-center justify-evenly mx-auto ">
+    <div className="hero-container min-h-screen relative max-w-7xl flex xs:flex-col xs:space-y-10 space-y-0 sm:flex-row-reverse md:h-screen items-center justify-evenly  mx-auto ">
       <div className="hero-bg-img xs:w-80 xs:h-80 md:w-auto md:h-auto drop-shadow-2xl shadow-white">
         <img src="src/assets/hero-bg.svg" alt="HeroBG" />
       </div>
