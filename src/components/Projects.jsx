@@ -1,0 +1,295 @@
+import React, { useState } from "react";
+
+export default function Projects() {
+  const [selectedCategory, setSelectedCategory] = useState(
+    "Full Stack Projects"
+  );
+
+  const projectsData = [
+    {
+      id: 1,
+      title: "Chatt Application",
+      description:
+        "A real-time chat application with user authentication, group creation, quick replies and notifications, and online status tracking.",
+      image: "src/assets/chat-app.png",
+      stack: ["MongoDB", "Express", "React", "Node.js"],
+      category: "Full Stack Projects",
+      role: "Full Stack Developer",
+      link: "https://chatt-app-jt87.onrender.com/",
+    },
+    {
+      id: 2,
+      title: "Magnewin Harmonic Insights",
+      description:
+        "An industrial data analysis solution that automates and visualizes over 50+ key metrics for real-time insights and operational efficiency.",
+      image: "src/assets/magnewin copy.jpg",
+      stack: ["MongoDB", "Express", "Node.js", "React.js", "Tailwind CSS"],
+      category: "Full Stack Projects",
+      role: "Full Stack Developer",
+      link: "https://your-live-demo-or-repo-link.com",
+    },
+    {
+      id: 3,
+      title: "Cryptify — Document Verification Portal using Blockchain",
+      description:
+        "A blockchain-based portal that streamlines certificate verification, reducing processing time from days to minutes.",
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop", 
+      stack: ["MongoDB", "Express", "Node.js", "React", "Blockchain"],
+      category: "Full Stack Projects",
+      role: "Full Stack Developer",
+      link: "https://your-cryptify-link.com",
+    },
+    {
+      id: 4,
+      title: "ConnectSpace is an all-in-one communication",
+      description:
+        "Secure chat and video calls for teams and clients — all in one streamlined, reliable platform.",
+      image:
+        "src/assets/chat-ui.png",
+      stack: ["Figma"],
+      category: "UI Designs",
+      role: "UI Designer",
+      link: "https://your-chat-app-link.com",
+    },
+    {
+      id: 5,
+      title: "Healthcare Dashboard",
+      description:
+        "Patient management interface with clean design and intuitive navigation.",
+      image:
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=300&fit=crop",
+      stack: ["Figma"],
+      category: "UI Designs",
+      role: "UI Designer",
+      link: "https://your-chat-app-link.com",
+    },
+    {
+      id: 6,
+      title: "Food Delivery App",
+      description:
+        "Food ordering design with interactive elements and smooth checkout flow.",
+      image:
+        "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=500&h=300&fit=crop",
+      stack: ["Figma"],
+      category: "UI Designs",
+      role: "UI Designer",
+      link: "https://your-chat-app-link.com",
+    },
+    {
+      id: 7,
+      title: "Corporate Website",
+      description:
+        "Professional business website with responsive design and branding.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
+      stack: ["React", "Figma"],
+      category: "Web Design",
+      role: "Frontend Developer & Designer",
+      link: "https://your-chat-app-link.com",
+    },
+    {
+      id: 8,
+      title: "Portfolio Website",
+      description:
+        "Portfolio with animations, responsive layout, and elegant interactions.",
+      image:
+        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop",
+      stack: ["React", "Figma"],
+      category: "Web Design",
+      role: "Frontend Developer & Designer",
+      link: "https://your-chat-app-link.com",
+    },
+    {
+      id: 9,
+      title: "Restaurant Landing Page",
+      description:
+        "Restaurant site with menu showcase and online reservation feature.",
+      image:
+        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&h=300&fit=crop",
+      stack: ["React", "Figma"],
+      category: "Web Design",
+      role: "Frontend Developer & Designer",
+      link: "https://your-chat-app-link.com",
+    },
+  ];
+
+  const categories = [...new Set(projectsData.map((p) => p.category))];
+  const filteredProjects = projectsData.filter(
+    (p) => p.category === selectedCategory
+  );
+
+  return (
+    <div
+      id="projects"
+      className="flex flex-col items-center justify-center px-4 w-screen"
+    >
+      <div className="flex flex-col items-center max-w-7xl mx-auto">
+        <h2 className="text-4xl font-bold text-teal mb-8">My Projects</h2>
+
+        <div className="flex flex-wrap justify-center mb-12">
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`m-2 px-6 py-3 rounded-full text-sm font-serif font-semibold transition-all duration-300 ${
+                selectedCategory === category
+                  ? "bg-sky-200 text-gray-600 shadow-lg transform scale-105"
+                  : "bg-white text-gray-600 hover:bg-sky-50 hover:text-gray-900 shadow-md hover:shadow-lg"
+              }`}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <div className="w-full">
+          <div className="hidden md:block">
+            {filteredProjects.map((project, index) => (
+              <div
+                key={project.id}
+                className={`flex items-center mb-16 ${
+                  index % 2 === 1 ? "flex-row-reverse" : ""
+                }`}
+              >
+                <div className="w-1/2 px-8">
+                  <div className="relative overflow-hidden rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-64 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  </div>
+                </div>
+
+                <div className="w-1/2 px-8">
+                  <div
+                    id="card-bg"
+                    className="bg-slate-400 rounded-2xl p-8 shadow-xl hover:shadow-inner transition-shadow duration-300"
+                  >
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      {project.title}
+                    </h3>
+                    <p className="text-white text-base leading-relaxed mb-6">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {project.stack.map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-sm font-semibold rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm font-medium text-gray-500">
+                        {project.role}
+                      </span>
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 text-blue-600 hover:text-blue-800 transition-colors"
+                      >
+                        <svg
+                          className="w-6 h-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile View */}
+          <div className="md:hidden">
+            {filteredProjects.map((project) => (
+              <div key={project.id} className="mb-8">
+                <div
+                  id="card-bg"
+                  className="bg-slate-400 rounded-2xl overflow-hidden shadow-xl"
+                >
+                  <div className="relative">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-white mb-3">
+                      {project.title}
+                    </h3>
+                    <p className="text-white text-sm leading-relaxed mb-4">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {project.stack.map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-xs font-semibold rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs font-medium text-white">
+                        {project.role}
+                      </span>
+                      {/* <button className="p-2 text-blue-600 hover:text-blue-800 transition-colors">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </button> */}
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 text-blue-600 hover:text-blue-800 transition-colors"
+                      >
+                        <svg
+                          className="w-6 h-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
