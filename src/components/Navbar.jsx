@@ -13,15 +13,10 @@ export default function Navbar() {
           />
         </div>
         <div className="nav-list flex flex-row items-center md:space-x-5 xs:space-x-2">
-          {/* <div className="contact text-white group">
-            <a href="#">Contact Me</a>
-            <div className="mx-2 h-1 border-b border-transparent group-hover:border-slate-200 transition-all duration-300"></div>
-          </div> */}
-
           <div className="hire-me">
             <Link to="contact" smooth={true} duration={1500}>
-              <button className="hire text-white xs:px-2 xs:py-1 md:px-4 md:py-2 hover:text-[#222831] hover:bg-white rounded-3xl   transition-colors duration-1000 ease-in-out border-[1px] border-slate-600 hover:border-none  shadow-white">
-                HireMe
+              <button className="hire text-white xs:px-4 xs:py-2 md:px-6 md:py-3 hover:text-[#222831] hover:bg-white rounded-full transition-all duration-500 ease-in-out border-2 border-teal hover:border-white shadow-lg hover:shadow-teal/30 hover:scale-105 transform">
+                Hire Me
               </button>
             </Link>
           </div>

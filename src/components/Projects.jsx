@@ -166,7 +166,7 @@ export default function Projects() {
                 <div className="w-1/2 px-8">
                   <div
                     id="card-bg"
-                    className="bg-slate-400 rounded-2xl p-8 shadow-xl hover:shadow-inner transition-shadow duration-300"
+                    className="bg-slate-600 rounded-2xl p-8 shadow-xl hover:shadow-inner transition-shadow duration-300"
                   >
                     <h3 className="text-2xl font-bold text-white mb-4">
                       {project.title}
@@ -223,7 +223,7 @@ export default function Projects() {
               <div key={project.id} className="mb-8">
                 <div
                   id="card-bg"
-                  className="bg-slate-400 rounded-2xl overflow-hidden shadow-xl"
+                  className="bg-slate-600 rounded-2xl overflow-hidden shadow-xl"
                 >
                   <div className="relative">
                     <img
