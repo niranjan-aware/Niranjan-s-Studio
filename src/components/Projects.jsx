@@ -11,7 +11,7 @@ export default function Projects() {
       title: "Chatt Application",
       description:
         "A real-time chat application with user authentication, group creation, quick replies and notifications, and online status tracking.",
-      image: "src/assets/chat-app.png",
+      image: "https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574156/chat-app_te3k7k.png",
       stack: ["MongoDB", "Express", "React", "Node.js"],
       category: "Full Stack Projects",
       role: "Full Stack Developer",
@@ -22,7 +22,7 @@ export default function Projects() {
       title: "Magnewin Harmonic Insights",
       description:
         "An industrial data analysis solution that automates and visualizes over 50+ key metrics for real-time insights and operational efficiency.",
-      image: "src/assets/magnewin copy.jpg",
+      image: "https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574167/magnewin_s52kiv.jpg",
       stack: ["MongoDB", "Express", "Node.js", "React.js", "Tailwind CSS"],
       category: "Full Stack Projects",
       role: "Full Stack Developer",
@@ -46,7 +46,7 @@ export default function Projects() {
       description:
         "Secure chat and video calls for teams and clients — all in one streamlined, reliable platform.",
       image:
-        "src/assets/chat-ui.png",
+        "https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574156/chat-ui_yw5ygr.png",
       stack: ["Figma"],
       category: "UI Designs",
       role: "UI Designer",

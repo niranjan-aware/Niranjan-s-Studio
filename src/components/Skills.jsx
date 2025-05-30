@@ -20,7 +20,25 @@ import cpp from "../assets/C++ (CPlusPlus).svg"
 
 export default function Skills() {
  const [selectedCategory, setSelectedCategory] = useState("Languages");
-
+ const reactjsIcon='https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574170/react_mb7olv.svg'
+ const cssIcon = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574911/Brand_css_Style_Light_rw3w41.svg'
+const githubIcon = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574168/Platform_Github_Color_Original_q8tvt1.svg'
+const jsIcon = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574157/Brand_js_Style_Light_hztanc.svg'
+const mongodbIcon = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574911/Brand_mongodb_Style_Light_ychvmg.svg'
+const nodejsIcon = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574159/Brand_nodejs_Style_Light_ps32ag.svg'
+const tailwindIcon = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574160/Brand_tailwind_Style_Light_cg0ibf.svg'
+const html5Icon = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574155/Brand_html5_Style_Light_zzeltr.svg'
+const postgreSQL = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574169/postgreSQL_wapxln.svg'
+const Bamboo = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574157/Bamboo_jrxdto.svg'
+const Docker = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574161/Docker_pmickf.svg'
+const intellij = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574165/IntelliJ_IDEA_diivva.svg'
+const VS  = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574171/Visual_Studio_Code_VS_Code_qtf6zf.svg'
+const splunk  = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574170/splunk_wwchda.svg'
+const springboot = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574170/springboot_nysbuo.svg'
+const Java = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574165/Java_b0v94f.svg'
+const cpp = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574161/C_CPlusPlus_l1utq6.svg'
+const vitejs = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574161/Brand_vitejs_Style_Light_cxlm7w.svg'
+const redux = 'https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574160/Brand_redux_Style_Light_qoap62.svg'
   const skillsData = [
     { src: Java, alt: "Java", category: "Languages", level: 75 },
     { src: cpp, alt: "C++", category: "Languages", level: 85 },
