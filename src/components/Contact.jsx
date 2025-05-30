@@ -72,7 +72,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen text-white flex items-center justify-center p-4 lg:p-8">
+    <div id='contact' className="min-h-screen text-white flex items-center justify-center p-4 lg:p-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 max-w-6xl w-full bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl border border-gray-700 overflow-hidden shadow-2xl relative">
         <div className="absolute inset-0 bg-gradient-to-45deg from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl -z-10"></div>
         

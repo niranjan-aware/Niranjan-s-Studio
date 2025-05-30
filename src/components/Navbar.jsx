@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 export default function Navbar() {
   return (
@@ -6,7 +7,7 @@ export default function Navbar() {
       <nav className="nav container flex flex-row items-center justify-between h-16  max-w-7xl">
         <div className="logo">
           <img
-            src="src/assets/Niranjan’s Studio.svg"
+            src="https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574167/Niranjan_s_Studio_u0xrmm.svg"
             alt="logo"
             className="logo"
           />
@@ -18,10 +19,11 @@ export default function Navbar() {
           </div> */}
 
           <div className="hire-me">
-            
-            <button className="hire text-white xs:px-2 xs:py-1 md:px-4 md:py-2 hover:text-[#222831] hover:bg-white rounded-3xl   transition-colors duration-1000 ease-in-out border-[1px] border-slate-600 hover:border-none  shadow-white">
-              HireMe
-            </button>
+            <Link to="contact" smooth={true} duration={1500}>
+              <button className="hire text-white xs:px-2 xs:py-1 md:px-4 md:py-2 hover:text-[#222831] hover:bg-white rounded-3xl   transition-colors duration-1000 ease-in-out border-[1px] border-slate-600 hover:border-none  shadow-white">
+                HireMe
+              </button>
+            </Link>
           </div>
         </div>
       </nav>

@@ -3,12 +3,16 @@ import { TbFileDownload } from "react-icons/tb";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithubSquare } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import { Link } from "react-scroll";
 
 export default function Hero() {
   return (
     <div className="hero-container min-h-screen relative max-w-7xl flex xs:flex-col xs:space-y-10 space-y-0 sm:flex-row-reverse md:h-screen items-center justify-evenly  mx-auto ">
       <div className="hero-bg-img xs:w-80 xs:h-80 md:w-auto md:h-auto drop-shadow-2xl shadow-white">
-        <img src="https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574165/hero-bg_ca5plg.svg" alt="HeroBG" />
+        <img
+          src="https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574165/hero-bg_ca5plg.svg"
+          alt="HeroBG"
+        />
       </div>
 
       <div className="title space-y-5">
@@ -22,11 +26,12 @@ export default function Hero() {
         </div>
 
         <div className="contact-btn font-semibold xs:font-normal flex flex-row xs:space-x-4 md:space-x-8">
-           <div className="hire-me">
-            
-            <button className="hire text-white xs:px-2 xs:py-1 md:px-4 md:py-2 hover:text-[#222831] hover:bg-white rounded-3xl hover:shadow-inner shadow-black transition-colors duration-1000 ease-in-out border-[1px] border-slate-600 hover:border-none">
-              HireMe
-            </button>
+          <div className="hire-me">
+            <Link to="contact" smooth={true} duration={1500}>
+              <button className="hire text-white xs:px-2 xs:py-1 md:px-4 md:py-2 hover:text-[#222831] hover:bg-white rounded-3xl   transition-colors duration-1000 ease-in-out border-[1px] border-slate-600 hover:border-none  shadow-white">
+                HireMe
+              </button>
+            </Link>
           </div>
 
           <div className="download-btn flex items-center xs:px-3 xs:py-1 md:space-x-2 md:px-6 md:py-2 bg-slate-500 bg-opacity-25 rounded-3xl text-white hover:text-teal hover:bg-opacity-50 transition-all duration-300 border-[1px] border-slate-600 hover:border-none">

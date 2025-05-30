@@ -26,7 +26,7 @@ export default function Projects() {
       stack: ["MongoDB", "Express", "Node.js", "React.js", "Tailwind CSS"],
       category: "Full Stack Projects",
       role: "Full Stack Developer",
-      link: "https://your-live-demo-or-repo-link.com",
+      link: "https://github.com/niranjan-aware/MagnewinHarmonicInsights",
     },
     {
       id: 3,
@@ -34,11 +34,11 @@ export default function Projects() {
       description:
         "A blockchain-based portal that streamlines certificate verification, reducing processing time from days to minutes.",
       image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop", 
+        "https://res.cloudinary.com/dlf06uxsc/image/upload/v1748577067/Screenshot_2025-05-30_at_9.20.47_AM_qms75u.png", 
       stack: ["MongoDB", "Express", "Node.js", "React", "Blockchain"],
       category: "Full Stack Projects",
       role: "Full Stack Developer",
-      link: "https://your-cryptify-link.com",
+      link: "https://github.com/niranjan-aware/WCE_verification-portal",
     },
     {
       id: 4,
@@ -50,68 +50,68 @@ export default function Projects() {
       stack: ["Figma"],
       category: "UI Designs",
       role: "UI Designer",
-      link: "https://your-chat-app-link.com",
+      link: "https://www.figma.com/design/ML544V0F62UJvYYJH2P7ge/chat-app?node-id=0-1&t=aij8CRlXNBguGCJa-1",
     },
     {
       id: 5,
-      title: "Healthcare Dashboard",
+      title: "Personal Portfolio",
       description:
-        "Patient management interface with clean design and intuitive navigation.",
+        "My personal portfolio showcasing my projects, skills, and experience as a full-stack developer. Built with modern web technologies and a focus on clean UI and performance.",
       image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=300&fit=crop",
+        "https://res.cloudinary.com/dlf06uxsc/image/upload/v1748576096/Screenshot_2025-05-30_at_9.04.16_AM_k1wpnt.png",
       stack: ["Figma"],
       category: "UI Designs",
       role: "UI Designer",
-      link: "https://your-chat-app-link.com",
+      link: "https://www.figma.com/design/jcldGsCYomho0ogHafJpiP/Portfolio?node-id=0-1&t=HXatqCoaSJG5Hbf9-1",
     },
-    {
-      id: 6,
-      title: "Food Delivery App",
-      description:
-        "Food ordering design with interactive elements and smooth checkout flow.",
-      image:
-        "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=500&h=300&fit=crop",
-      stack: ["Figma"],
-      category: "UI Designs",
-      role: "UI Designer",
-      link: "https://your-chat-app-link.com",
-    },
-    {
-      id: 7,
-      title: "Corporate Website",
-      description:
-        "Professional business website with responsive design and branding.",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-      stack: ["React", "Figma"],
-      category: "Web Design",
-      role: "Frontend Developer & Designer",
-      link: "https://your-chat-app-link.com",
-    },
-    {
-      id: 8,
-      title: "Portfolio Website",
-      description:
-        "Portfolio with animations, responsive layout, and elegant interactions.",
-      image:
-        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop",
-      stack: ["React", "Figma"],
-      category: "Web Design",
-      role: "Frontend Developer & Designer",
-      link: "https://your-chat-app-link.com",
-    },
-    {
-      id: 9,
-      title: "Restaurant Landing Page",
-      description:
-        "Restaurant site with menu showcase and online reservation feature.",
-      image:
-        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&h=300&fit=crop",
-      stack: ["React", "Figma"],
-      category: "Web Design",
-      role: "Frontend Developer & Designer",
-      link: "https://your-chat-app-link.com",
-    },
+    // {
+    //   id: 6,
+    //   title: "Food Delivery App",
+    //   description:
+    //     "Food ordering design with interactive elements and smooth checkout flow.",
+    //   image:
+    //     "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=500&h=300&fit=crop",
+    //   stack: ["Figma"],
+    //   category: "UI Designs",
+    //   role: "UI Designer",
+    //   link: "https://your-chat-app-link.com",
+    // },
+    // {
+    //   id: 7,
+    //   title: "Corporate Website",
+    //   description:
+    //     "Professional business website with responsive design and branding.",
+    //   image:
+    //     "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
+    //   stack: ["React", "Figma"],
+    //   category: "Web Design",
+    //   role: "Frontend Developer & Designer",
+    //   link: "https://your-chat-app-link.com",
+    // },
+    // {
+    //   id: 8,
+    //   title: "Portfolio Website",
+    //   description:
+    //     "Portfolio with animations, responsive layout, and elegant interactions.",
+    //   image:
+    //     "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop",
+    //   stack: ["React", "Figma"],
+    //   category: "Web Design",
+    //   role: "Frontend Developer & Designer",
+    //   link: "https://your-chat-app-link.com",
+    // },
+    // {
+    //   id: 9,
+    //   title: "Restaurant Landing Page",
+    //   description:
+    //     "Restaurant site with menu showcase and online reservation feature.",
+    //   image:
+    //     "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&h=300&fit=crop",
+    //   stack: ["React", "Figma"],
+    //   category: "Web Design",
+    //   role: "Frontend Developer & Designer",
+    //   link: "https://your-chat-app-link.com",
+    // },
   ];
 
   const categories = [...new Set(projectsData.map((p) => p.category))];
@@ -187,7 +187,7 @@ export default function Projects() {
                     </div>
 
                     <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium text-gray-500">
+                      <span className="text-sm font-medium text-gray-50">
                         {project.role}
                       </span>
                       <a

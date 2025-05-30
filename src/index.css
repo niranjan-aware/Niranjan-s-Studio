@@ -12,13 +12,13 @@
   100% { background-position: 0% 50%; }
 }
 #skills {
-  background-image: url('src/assets/bg-doodle.svg');
+  background-image: url('https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574159/bg-doodle_jslddd.svg');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #card-bg{
-  background-image: url('src/assets/doodle-card.svg');
+  background-image: url('https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574161/doodle-card_advlyx.svg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -37,3 +37,5 @@
     #03045e
   );
 }
+
+
