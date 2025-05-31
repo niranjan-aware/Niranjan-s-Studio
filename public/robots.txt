@@ -1,0 +1,6 @@
+# robots.txt
+
+User-agent: *
+Allow: /
+
+Sitemap: https://niranjan-s-studio.netlify.app/sitemap.xml
