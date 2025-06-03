@@ -60,7 +60,7 @@ export default function Projects() {
       description:
         "My personal portfolio showcasing my projects, skills, and experience as a full-stack developer. Built with modern web technologies and a focus on clean UI and performance.",
       image:
-        "https://res.cloudinary.com/dlf06uxsc/image/upload/v1748576096/Screenshot_2025-05-30_at_9.04.16_AM_k1wpnt.png",
+        "https://res.cloudinary.com/dlf06uxsc/image/upload/v1748940122/Screenshot_2025-06-03_at_2.11.15_PM_urfp48.png",
       stack: ["Figma"],
       category: "UI Designs",
       role: "UI Designer",
