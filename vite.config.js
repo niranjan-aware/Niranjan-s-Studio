@@ -1,31 +1,27 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import tailwindcss from '@tailwindcss/vite'
+import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
-  plugins: [react(),],
-   build: {
+  plugins: [react()],
+  server: {
+    port: 3000,
+    open: true
+  },
+  build: {
     outDir: 'dist',
-    assetsDir: 'assets',
+    sourcemap: true,
     rollupOptions: {
       output: {
-        assetFileNames: 'assets/[name]-[hash][extname]'
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          animations: ['framer-motion'],
+          icons: ['lucide-react', 'react-icons']
+        }
       }
     }
   },
-  server: {
-    host: '0.0.0.0', // <-- this is the key
-    port: 5173,       // optional: change if you want
-  },
-  preview: {
-    host: '0.0.0.0',
-    port: 8080,
-    allowedHosts: [
-      'niranjan-s-studio.onrender.com',
-      'localhost',
-      '127.0.0.1'
-    ]
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'framer-motion', 'lucide-react', 'react-icons']
   }
 })

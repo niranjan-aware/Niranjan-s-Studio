@@ -6,38 +6,113 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Niranjan’s Studio – Full-Stack Developer Portfolio</title>
+  <!-- Theme Script - Add this FIRST to prevent flash -->
+  <script>
+    // Prevent theme flash by applying theme immediately
+    (function() {
+      function getInitialTheme() {
+        // Check local storage first
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
+          return savedTheme;
+        }
+        
+        // Check system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        
+        return 'light';
+      }
+      
+      const theme = getInitialTheme();
+      document.documentElement.classList.add(theme);
+      document.documentElement.setAttribute('data-theme', theme);
+      
+      // Set CSS custom properties for immediate theme application
+      if (theme === 'dark') {
+        document.documentElement.style.backgroundColor = '#0f172a';
+        document.documentElement.style.color = '#f8fafc';
+      } else {
+        document.documentElement.style.backgroundColor = '#fafafa';
+        document.documentElement.style.color = '#1e293b';
+      }
+    })();
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3crect width='100' height='100' fill='%232563eb'/%3e%3ctext x='50' y='60' font-family='Arial, sans-serif' font-size='50' font-weight='bold' text-anchor='middle' fill='white'%3eN%3c/text%3e%3c/svg%3e" />
+
+  <title>Niranjan's Studio – Full-Stack Developer Portfolio</title>
   <meta name="description"
-    content="Niranjan Aware’s portfolio showcasing full-stack projects, skills, and experience. Built with React, Tailwind CSS, and Node.js." />
+    content="Niranjan Aware's portfolio showcasing full-stack projects, skills, and experience. Built with React, Tailwind CSS, and Node.js." />
   <meta name="robots" content="index, follow" />
+  
+  <!-- PWA Manifest -->
   <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#2563eb" />
+  
+  <!-- Updated PWA meta tags -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Niranjan's Studio">
+  
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" sizes="192x192" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3e%3crect width='192' height='192' rx='48' fill='%232563eb'/%3e%3ctext x='96' y='130' font-family='system-ui, -apple-system, sans-serif' font-size='100' font-weight='700' text-anchor='middle' fill='white'%3eN%3c/text%3e%3c/svg%3e">
+  <link rel="apple-touch-icon" sizes="512x512" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3crect width='512' height='512' rx='128' fill='%232563eb'/%3e%3ctext x='256' y='340' font-family='system-ui, -apple-system, sans-serif' font-size='280' font-weight='700' text-anchor='middle' fill='white'%3eN%3c/text%3e%3c/svg%3e">
+  
   <link rel="canonical" href="https://niranjan-s-studio.netlify.app/" />
 
-  <meta property="og:title" content="Niranjan’s Studio – Full-Stack Developer Portfolio" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Niranjan's Studio – Full-Stack Developer Portfolio" />
   <meta property="og:description"
-    content="Niranjan Aware’s portfolio showcasing full-stack projects, skills, and experience. Built with React, Tailwind CSS, and Node.js." />
+    content="Niranjan Aware's portfolio showcasing full-stack projects, skills, and experience. Built with React, Tailwind CSS, and Node.js." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://niranjan-s-studio.netlify.app/" />
   <meta property="og:image"
     content="https://res.cloudinary.com/dlf06uxsc/image/upload/v1748940122/Screenshot_2025-06-03_at_2.11.15_PM_urfp48.png" />
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Niranjan’s Studio – Full-Stack Developer Portfolio" />
+  <meta name="twitter:title" content="Niranjan's Studio – Full-Stack Developer Portfolio" />
   <meta name="twitter:description"
-    content="Niranjan Aware’s portfolio showcasing full-stack projects, skills, and experience. Built with React, Tailwind CSS, and Node.js." />
+    content="Niranjan Aware's portfolio showcasing full-stack projects, skills, and experience. Built with React, Tailwind CSS, and Node.js." />
   <meta name="twitter:image"
     content="https://res.cloudinary.com/dlf06uxsc/image/upload/v1748940122/Screenshot_2025-06-03_at_2.11.15_PM_urfp48.png" />
 
+  <!-- Structured Data -->
   <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"Person","name":"Niranjan Aware","url":"https://niranjan-s-studio.netlify.app/","sameAs":["https://github.com/niranjan-aware","https://linkedin.com/in/niranjan-aware-673019211"],"jobTitle":"Full-Stack Web Developer"}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NP8W8BV5RN"></script>
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Niranjan Aware",
+      "url": "https://niranjan-s-studio.netlify.app/",
+      "sameAs": [
+        "https://github.com/niranjan-aware",
+        "https://linkedin.com/in/niranjan-aware-673019211"
+      ],
+      "jobTitle": "Full-Stack Web Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Sincro Digital Pvt Ltd"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Walchand College of Engineering"
+      }
+    }
+  </script>
+    
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NP8W8BV5RN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-NP8W8BV5RN');
   </script>
+  
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
