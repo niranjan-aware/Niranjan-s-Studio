@@ -2,136 +2,171 @@
 <html lang="en">
 
 <head>
-  <meta name="google-site-verification" content="I0Rx3UKwb6Tqv2U4zfxXQHyYpNrfhnt-F2SFj29jo70" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-  <!-- Theme Script - Add this FIRST to prevent flash -->
+  <!-- Primary title & description (keyword-rich) -->
+  <title>Niranjan's Studio | Niranjan Aware — Full-Stack Developer Portfolio</title>
+  <meta name="description"
+    content="Niranjan's Studio — the portfolio of Niranjan Aware, Full-Stack Developer. Explore projects, skills (React, Node.js, Spring Boot), experience, and contact information." />
+  <meta name="keywords"
+    content="Niranjan Studio, Niranjan's Studio, Niranjan Portfolio, Niranjan Aware, Full-Stack Developer, React Developer, Node.js Portfolio, Web Developer" />
+  <meta name="author" content="Niranjan Aware" />
+  <link rel="canonical" href="https://niranjan-s-studio.netlify.app/" />
+
+  <!-- Preconnects for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="alternate" hreflang="en" href="https://niranjan-s-studio.netlify.app/" />
+
+  <!-- Theme Script - apply theme as early as possible to prevent FOUC -->
   <script>
-    // Prevent theme flash by applying theme immediately
-    (function() {
+    (function () {
       function getInitialTheme() {
-        // Check local storage first
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
-          return savedTheme;
+        try {
+          const savedTheme = localStorage.getItem('theme');
+          if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
+        } catch (e) {
+          /* noop - localStorage might be unavailable */
         }
-        
-        // Check system preference
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
           return 'dark';
         }
-        
         return 'light';
       }
-      
       const theme = getInitialTheme();
       document.documentElement.classList.add(theme);
       document.documentElement.setAttribute('data-theme', theme);
-      
-      // Set CSS custom properties for immediate theme application
+
+      // A couple of inline style hints to reduce first-frame flash (non-invasive)
       if (theme === 'dark') {
         document.documentElement.style.backgroundColor = '#0f172a';
         document.documentElement.style.color = '#f8fafc';
       } else {
         document.documentElement.style.backgroundColor = '#fafafa';
-        document.documentElement.style.color = '#1e293b';
+        document.documentElement.style.color = '#0f172a';
       }
     })();
   </script>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3crect width='100' height='100' fill='%232563eb'/%3e%3ctext x='50' y='60' font-family='Arial, sans-serif' font-size='50' font-weight='bold' text-anchor='middle' fill='white'%3eN%3c/text%3e%3c/svg%3e" />
-
-  <title>Niranjan's Studio – Full-Stack Developer Portfolio</title>
-  <meta name="description"
-    content="Niranjan Aware's portfolio showcasing full-stack projects, skills, and experience. Built with React, Tailwind CSS, and Node.js." />
-  <meta name="robots" content="index, follow" />
-  
-  <!-- PWA Manifest -->
+  <!-- Favicons / PWA -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3crect width='100' height='100' fill='%232563eb'/%3e%3ctext x='50' y='60' font-family='Arial, sans-serif' font-size='50' font-weight='bold' text-anchor='middle' fill='white'%3eN%3c/text%3e%3c/svg%3e" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#2563eb" />
-  
-  <!-- Updated PWA meta tags -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Niranjan's Studio">
-  
-  <!-- Apple Touch Icons -->
-  <link rel="apple-touch-icon" sizes="192x192" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3e%3crect width='192' height='192' rx='48' fill='%232563eb'/%3e%3ctext x='96' y='130' font-family='system-ui, -apple-system, sans-serif' font-size='100' font-weight='700' text-anchor='middle' fill='white'%3eN%3c/text%3e%3c/svg%3e">
-  <link rel="apple-touch-icon" sizes="512x512" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3crect width='512' height='512' rx='128' fill='%232563eb'/%3e%3ctext x='256' y='340' font-family='system-ui, -apple-system, sans-serif' font-size='280' font-weight='700' text-anchor='middle' fill='white'%3eN%3c/text%3e%3c/svg%3e">
-  
-  <link rel="canonical" href="https://niranjan-s-studio.netlify.app/" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Niranjan's Studio" />
+  <link rel="apple-touch-icon" sizes="192x192"
+    href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3e%3crect width='192' height='192' rx='48' fill='%232563eb'/%3e%3ctext x='96' y='130' font-family='system-ui, -apple-system, sans-serif' font-size='100' font-weight='700' text-anchor='middle' fill='white'%3eN%3c/text%3e%3c/svg%3e" />
+  <link rel="apple-touch-icon" sizes="512x512"
+    href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3crect width='512' height='512' rx='128' fill='%232563eb'/%3e%3ctext x='256' y='340' font-family='system-ui, -apple-system, sans-serif' font-size='280' font-weight='700' text-anchor='middle' fill='white'%3eN%3c/text%3e%3c/svg%3e" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Niranjan's Studio – Full-Stack Developer Portfolio" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Niranjan's Studio" />
+  <meta property="og:title" content="Niranjan's Studio | Niranjan Aware — Full-Stack Developer Portfolio" />
   <meta property="og:description"
-    content="Niranjan Aware's portfolio showcasing full-stack projects, skills, and experience. Built with React, Tailwind CSS, and Node.js." />
+    content="Niranjan's Studio — portfolio of Niranjan Aware. Browse projects built with React, Node.js, Spring Boot and more." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://niranjan-s-studio.netlify.app/" />
   <meta property="og:image"
-    content="https://res.cloudinary.com/dlf06uxsc/image/upload/v1748940122/Screenshot_2025-06-03_at_2.11.15_PM_urfp48.png" />
+    content="https://res.cloudinary.com/dlf06uxsc/image/upload/v1755933237/LandingPage_rzj9tn.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Niranjan's Studio – Full-Stack Developer Portfolio" />
+  <meta name="twitter:site" content="@niranjan_aware" />
+  <meta name="twitter:title" content="Niranjan's Studio — Full-Stack Developer Portfolio" />
   <meta name="twitter:description"
-    content="Niranjan Aware's portfolio showcasing full-stack projects, skills, and experience. Built with React, Tailwind CSS, and Node.js." />
+    content="Niranjan's Studio — portfolio of Niranjan Aware. Browse projects built with React, Node.js, Spring Boot and more." />
   <meta name="twitter:image"
-    content="https://res.cloudinary.com/dlf06uxsc/image/upload/v1748940122/Screenshot_2025-06-03_at_2.11.15_PM_urfp48.png" />
+    content="https://res.cloudinary.com/dlf06uxsc/image/upload/v1755933237/LandingPage_rzj9tn.png" />
 
-  <!-- Structured Data -->
+  <!-- Structured Data: Person, WebSite, WebPage -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Niranjan Aware",
-      "url": "https://niranjan-s-studio.netlify.app/",
-      "sameAs": [
-        "https://github.com/niranjan-aware",
-        "https://linkedin.com/in/niranjan-aware-673019211"
-      ],
-      "jobTitle": "Full-Stack Web Developer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Sincro Digital Pvt Ltd"
-      },
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Walchand College of Engineering"
-      }
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://niranjan-s-studio.netlify.app/#person",
+          "name": "Niranjan Aware",
+          "url": "https://niranjan-s-studio.netlify.app/",
+          "sameAs": [
+            "https://github.com/niranjan-aware",
+            "https://linkedin.com/in/niranjan-aware-673019211"
+          ],
+          "jobTitle": "Full-Stack Web Developer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Sincro Digital Pvt Ltd"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://niranjan-s-studio.netlify.app/#website",
+          "url": "https://niranjan-s-studio.netlify.app/",
+          "name": "Niranjan's Studio",
+          "publisher": {
+            "@id": "https://niranjan-s-studio.netlify.app/#person"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://niranjan-s-studio.netlify.app/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://niranjan-s-studio.netlify.app/#webpage",
+          "url": "https://niranjan-s-studio.netlify.app/",
+          "name": "Niranjan's Studio Portfolio",
+          "isPartOf": {
+            "@id": "https://niranjan-s-studio.netlify.app/#website"
+          },
+          "description": "Portfolio website for Niranjan Aware — projects, skills, and experience in modern web development."
+        }
+      ]
     }
   </script>
-    
-  <!-- Google Analytics -->
+
+  <!-- Google Analytics (existing) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NP8W8BV5RN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'G-NP8W8BV5RN');
+    gtag('config', 'G-NP8W8BV5RN', { 'anonymize_ip': true });
   </script>
-  
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-T64K3XMZ');</script>
-  <!-- End Google Tag Manager -->
+
+  <!-- Google Tag Manager (existing) -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-T64K3XMZ');
+  </script>
+
+  <!-- Optional: Preload main hero image (improves Largest Contentful Paint if you have a hero image) -->
+  <!-- <link rel="preload" as="image" href="/path/to/hero-image.jpg"> -->
+
+  <!-- Your other head assets (fonts, css) - include your build outputs here -->
+  <!-- Example: <link rel="stylesheet" href="/dist/output.css"> -->
+
 </head>
 
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T64K3XMZ" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
+
+  <!-- Main client script -->
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
