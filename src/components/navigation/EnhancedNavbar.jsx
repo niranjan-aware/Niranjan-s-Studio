@@ -1,4 +1,3 @@
-// src/components/navigation/EnhancedNavbar.jsx
 import React, { useState, useEffect } from 'react';
 import { useScroll } from '../../hooks/useScroll';
 import { useTheme } from '../../hooks/useTheme';
@@ -10,7 +9,6 @@ export default function EnhancedNavbar() {
   const { theme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Hide navbar when scrolling down, show when scrolling up
   const isVisible = scrollDirection === 'up' || scrollY < 50;
 
   const navItems = [
@@ -35,7 +33,6 @@ export default function EnhancedNavbar() {
 
   return (
     <>
-      {/* Skip to main content link for accessibility */}
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 
@@ -45,7 +42,6 @@ export default function EnhancedNavbar() {
         Skip to main content
       </a>
 
-      {/* Main Navigation */}
       <nav
         className={`
           fixed top-0 left-0 right-0 z-40 transition-all duration-500 ease-out
@@ -56,7 +52,6 @@ export default function EnhancedNavbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             
-            {/* Logo */}
             <div className="flex-shrink-0">
               <button
                 onClick={() => scrollToSection('#home')}
@@ -73,7 +68,6 @@ export default function EnhancedNavbar() {
               </button>
             </div>
 
-            {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-8">
               {navItems.map((item, index) => (
                 <button
@@ -89,7 +83,6 @@ export default function EnhancedNavbar() {
               ))}
             </div>
 
-            {/* Right side controls */}
             <div className="flex items-center space-x-4">
               <ThemeToggle />
               
@@ -103,23 +96,21 @@ export default function EnhancedNavbar() {
                 </MagneticButton>
               </div>
 
-              {/* Mobile menu button */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="lg:hidden p-2 rounded-lg glass hover:scale-110 transition-all duration-300"
+                className="lg:hidden p-2 rounded-lg glass hover:scale-110 transition-all duration-300 flex items-center justify-center w-10 h-10"
                 aria-label="Toggle menu"
               >
-                <div className="w-6 h-6 relative">
-                  <span className={`absolute h-0.5 w-6 bg-light-text dark:bg-dark-text transform transition-all duration-300 ${isMenuOpen ? 'rotate-45 top-3' : 'top-1'}`}></span>
-                  <span className={`absolute h-0.5 w-6 bg-light-text dark:bg-dark-text transform transition-all duration-300 top-3 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                  <span className={`absolute h-0.5 w-6 bg-light-text dark:bg-dark-text transform transition-all duration-300 ${isMenuOpen ? '-rotate-45 top-3' : 'top-5'}`}></span>
+                <div className="w-6 h-6 relative flex flex-col items-center justify-center">
+                  <span className={`absolute h-0.5 w-6 bg-light-text dark:bg-dark-text transform transition-all duration-300 ${isMenuOpen ? 'rotate-45' : '-translate-y-1.5'}`}></span>
+                  <span className={`absolute h-0.5 w-6 bg-light-text dark:bg-dark-text transform transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+                  <span className={`absolute h-0.5 w-6 bg-light-text dark:bg-dark-text transform transition-all duration-300 ${isMenuOpen ? '-rotate-45' : 'translate-y-1.5'}`}></span>
                 </div>
               </button>
             </div>
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <div className={`
           lg:hidden transition-all duration-500 ease-out overflow-hidden
           ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}

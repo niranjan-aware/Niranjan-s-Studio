@@ -1,4 +1,3 @@
-// src/components/sections/EnhancedContact.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import emailjs from "@emailjs/browser";
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
@@ -29,7 +28,6 @@ export default function EnhancedContact() {
   const { elementRef, hasIntersected } = useIntersection();
   const { mousePosition } = useMouse();
 
-  // Generate interactive particles
   useEffect(() => {
     const particleCount = 20;
     const newParticles = Array.from({ length: particleCount }, (_, i) => ({
@@ -43,7 +41,6 @@ export default function EnhancedContact() {
     setParticles(newParticles);
   }, []);
 
-  // Update particles based on mouse position
   useEffect(() => {
     if (mousePosition.x && mousePosition.y) {
       setParticles(prev => prev.map(particle => ({
@@ -243,11 +240,9 @@ export default function EnhancedContact() {
       ref={elementRef}
       className="relative py-20 lg:py-32 overflow-hidden bg-light-surface-variant dark:bg-dark-surface"
     >
-      {/* Background Effects */}
       <div className="absolute inset-0">
         <FloatingElements count={12} />
         
-        {/* Interactive Particles */}
         <div className="absolute inset-0 overflow-hidden">
           {particles.map(particle => (
             <div
@@ -264,10 +259,8 @@ export default function EnhancedContact() {
           ))}
         </div>
         
-        {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-light-primary/5 via-transparent to-light-accent/5 dark:from-dark-primary/5 dark:via-transparent dark:to-dark-accent/5" />
         
-        {/* Parallax Elements */}
         <ParallaxContainer speed={0.3} className="absolute top-20 right-20">
           <div className="w-40 h-40 bg-gradient-to-br from-light-primary/10 to-blue-500/10 dark:from-dark-primary/10 dark:to-blue-400/10 rounded-full blur-3xl"></div>
         </ParallaxContainer>
@@ -279,7 +272,6 @@ export default function EnhancedContact() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
         <div className={`text-center mb-16 ${hasIntersected ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass border border-light-primary/20 dark:border-dark-primary/20 mb-6">
             <Heart className="w-4 h-4 text-red-500 animate-pulse" />
@@ -302,10 +294,8 @@ export default function EnhancedContact() {
           </p>
         </div>
 
-        {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           
-          {/* Contact Form */}
           <div className={`${hasIntersected ? 'animate-slide-in' : 'opacity-0 -translate-x-10'}`} style={{ animationDelay: '200ms' }}>
             <GlassCard className="p-8" variant="strong">
               <div className="mb-8">
@@ -317,7 +307,6 @@ export default function EnhancedContact() {
                 </p>
               </div>
 
-              {/* Quick Topic Selection */}
               <div className="mb-6">
                 <label className="block text-sm font-medium text-light-text dark:text-dark-text mb-3">
                   Quick topic selection (optional)
@@ -336,7 +325,6 @@ export default function EnhancedContact() {
               </div>
 
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-                {/* Name Field */}
                 <div className="group">
                   <label htmlFor="user_name" className="block text-sm font-medium text-light-text dark:text-dark-text mb-2">
                     Your Name *
@@ -364,7 +352,6 @@ export default function EnhancedContact() {
                   )}
                 </div>
 
-                {/* Email Field */}
                 <div className="group">
                   <label htmlFor="user_email" className="block text-sm font-medium text-light-text dark:text-dark-text mb-2">
                     Email Address *
@@ -392,7 +379,6 @@ export default function EnhancedContact() {
                   )}
                 </div>
 
-                {/* Message Field */}
                 <div className="group">
                   <label htmlFor="message" className="block text-sm font-medium text-light-text dark:text-dark-text mb-2">
                     Your Message *
@@ -420,7 +406,6 @@ export default function EnhancedContact() {
                   )}
                 </div>
 
-                {/* Submit Button */}
                 <div className="pt-4">
                   <MagneticButton
                     type="submit"
@@ -435,7 +420,6 @@ export default function EnhancedContact() {
                 </div>
               </form>
 
-              {/* Success/Error Messages */}
               {submitStatus === "success" && (
                 <div className="mt-4 p-4 bg-green-100 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-xl animate-slide-up">
                   <div className="flex items-center">
@@ -460,10 +444,8 @@ export default function EnhancedContact() {
             </GlassCard>
           </div>
 
-          {/* Contact Information & Visual */}
           <div className={`space-y-8 ${hasIntersected ? 'animate-slide-in' : 'opacity-0 translate-x-10'}`} style={{ animationDelay: '400ms' }}>
             
-            {/* Contact Information */}
             <GlassCard className="p-8" variant="subtle">
               <h3 className="text-2xl font-bold text-light-text dark:text-dark-text mb-6">
                 Let's connect
@@ -496,7 +478,6 @@ export default function EnhancedContact() {
               </div>
             </GlassCard>
 
-            {/* Social Media */}
             <GlassCard className="p-8" variant="subtle">
               <h3 className="text-2xl font-bold text-light-text dark:text-dark-text mb-6">
                 Follow me
@@ -535,7 +516,6 @@ export default function EnhancedContact() {
               </div>
             </GlassCard>
 
-            {/* Availability Status */}
             <GlassCard className="p-6 text-center" variant="strong">
               <div className="space-y-4">
                 <div className="flex items-center justify-center space-x-2">
@@ -553,7 +533,6 @@ export default function EnhancedContact() {
           </div>
         </div>
 
-        {/* Bottom CTA */}
         <div className={`mt-16 text-center ${hasIntersected ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '600ms' }}>
           <GlassCard className="p-8" variant="strong">
             <div className="max-w-3xl mx-auto">

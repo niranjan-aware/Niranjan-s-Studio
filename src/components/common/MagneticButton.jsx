@@ -1,4 +1,4 @@
-// src/components/common/MagneticButton.jsx
+
 import React, { useRef, useEffect, useState } from 'react';
 import { useMouse } from '../../hooks/useMouse';
 
@@ -68,8 +68,9 @@ export default function MagneticButton({
         rounded-full font-semibold
         transition-all duration-300 ease-out
         transform-gpu
-        focus:outline-none focus:ring-2 focus:ring-light-primary/50 dark:focus:ring-dark-primary/50
+        focus:outline-none focus:ring-2 focus:ring-blue-500/50
         active:scale-95
+        flex items-center justify-center gap-2
         ${className}
       `}
       style={{

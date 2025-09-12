@@ -1,4 +1,4 @@
-// src/components/sections/EnhancedHero.jsx
+
 import React from 'react';
 import { TbFileDownload } from "react-icons/tb";
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
@@ -100,7 +100,7 @@ export default function EnhancedHero() {
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                 variant="primary"
                 size="lg"
-                className="shadow-lg hover:shadow-glow"
+                className="shadow-lg hover:shadow-xl"
               >
                 Let's Collaborate
               </MagneticButton>
@@ -109,10 +109,9 @@ export default function EnhancedHero() {
                 onClick={() => window.open('https://drive.google.com/file/d/1h-t8OZRFY9EoZfxaAmjeibghVKW0Av7A/view?usp=sharing', '_blank')}
                 variant="secondary"
                 size="lg"
-                className="group"
               >
+                <TbFileDownload className="w-5 h-5" />
                 <span>Download Resume</span>
-                <TbFileDownload className="ml-2 w-5 h-5 group-hover:animate-bounce" />
               </MagneticButton>
             </div>
 
@@ -145,56 +144,49 @@ export default function EnhancedHero() {
             </div>
           </div>
 
-          {/* Hero Visual Section - Responsive */}
+          {/* Profile Image Section */}
           <div className={`relative flex justify-center lg:justify-end ${hasIntersected ? 'animate-slide-up' : 'opacity-0 translate-y-20'}`} style={{ animationDelay: '200ms' }}>
             <div className="relative">
               
-              {/* Desktop: Large Illustration */}
-              <div className="hidden lg:block relative w-[500px] h-[500px] xl:w-[600px] xl:h-[600px] drop-shadow-2xl">
-                <img
-                  src="https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574165/hero-bg_ca5plg.svg"
-                  alt="Developer workspace illustration"
-                  className="w-full h-full object-contain transform hover:scale-110 transition-transform duration-700"
-                />
-                
-                {/* Subtle glow effect behind illustration */}
-                <div className="absolute -inset-12 bg-gradient-to-r from-light-primary/10 to-blue-500/10 dark:from-dark-primary/10 dark:to-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
-              </div>
-
-              {/* Mobile & Tablet: Profile Image */}
-              <div className="lg:hidden">
-                <GlassCard
-                  variant="strong"
-                  className="p-4 sm:p-6 hover:scale-105"
-                  hover={false}
-                >
-                  <div className="relative">
-                    {/* Glow effect behind image */}
-                    <div className="absolute -inset-4 bg-gradient-to-r from-light-primary/20 to-blue-500/20 dark:from-dark-primary/20 dark:to-blue-400/20 rounded-full blur-2xl animate-pulse"></div>
-                    
-                    {/* Profile image for mobile */}
-                    <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
-                      <img
-                        src="https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574167/NiranjanSinhagad_jf7vtl.jpg"
-                        alt="Niranjan Aware - Full Stack Developer"
-                        className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
-                      />
-                    </div>
-                    
-                    {/* Subtle corner accents for mobile */}
-                    <div className="absolute -top-3 -right-3 w-6 h-6 bg-gradient-to-br from-light-primary to-blue-500 dark:from-dark-primary dark:to-blue-400 rounded-full opacity-80"></div>
-                    <div className="absolute -bottom-3 -left-3 w-4 h-4 bg-gradient-to-br from-light-accent to-orange-500 dark:from-dark-accent dark:to-orange-400 rounded-full opacity-80"></div>
+              {/* Profile Image Container */}
+              <GlassCard
+                variant="strong"
+                className="p-6 hover:scale-105"
+                hover={false}
+              >
+                <div className="relative">
+                  {/* Glow effect behind image */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-light-primary/20 to-blue-500/20 dark:from-dark-primary/20 dark:to-blue-400/20 rounded-full blur-2xl animate-pulse"></div>
+                  
+                  {/* Main profile image */}
+                  <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
+                    <img
+                      src="https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574167/NiranjanSinhagad_jf7vtl.jpg"
+                      alt="Niranjan Aware - Full Stack Developer"
+                      className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
+                    />
                   </div>
-                </GlassCard>
-              </div>
+                  
+                  {/* Floating tech icons around image */}
+                  <div className="absolute -top-4 -right-4 w-12 h-12 glass rounded-full flex items-center justify-center animate-bounce" style={{ animationDelay: '1s' }}>
+                    <span className="text-2xl">⚛️</span>
+                  </div>
+                  <div className="absolute -bottom-4 -left-4 w-10 h-10 glass rounded-full flex items-center justify-center animate-bounce" style={{ animationDelay: '2s' }}>
+                    <span className="text-xl">🚀</span>
+                  </div>
+                  <div className="absolute top-1/4 -left-8 w-8 h-8 glass rounded-full flex items-center justify-center animate-bounce" style={{ animationDelay: '3s' }}>
+                    <span className="text-lg">💻</span>
+                  </div>
+                </div>
+              </GlassCard>
 
               {/* Parallax background elements */}
               <ParallaxContainer speed={0.3} className="absolute -z-10 -top-20 -right-20">
-                <div className="w-40 h-40 lg:w-60 lg:h-60 bg-gradient-to-br from-light-accent/10 to-orange-500/10 dark:from-dark-accent/10 dark:to-orange-400/10 rounded-full blur-3xl"></div>
+                <div className="w-40 h-40 bg-gradient-to-br from-light-accent/10 to-orange-500/10 dark:from-dark-accent/10 dark:to-orange-400/10 rounded-full blur-3xl"></div>
               </ParallaxContainer>
               
               <ParallaxContainer speed={-0.2} className="absolute -z-10 -bottom-20 -left-20">
-                <div className="w-32 h-32 lg:w-48 lg:h-48 bg-gradient-to-br from-light-primary/10 to-blue-500/10 dark:from-dark-primary/10 dark:to-blue-400/10 rounded-full blur-2xl"></div>
+                <div className="w-32 h-32 bg-gradient-to-br from-light-primary/10 to-blue-500/10 dark:from-dark-primary/10 dark:to-blue-400/10 rounded-full blur-2xl"></div>
               </ParallaxContainer>
             </div>
           </div>
@@ -217,7 +209,7 @@ export default function EnhancedHero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.label}
-              className={`p-3 glass rounded-lg transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-light-text-muted dark:text-dark-text-muted ${link.color}`}
+              className={`p-3 glass rounded-lg transition-all duration-300 hover:scale-110 hover:-translate-y-1 ${link.color}`}
             >
               <IconComponent className="w-5 h-5" />
             </a>

@@ -1,4 +1,4 @@
-// src/components/sections/EnhancedProjects.jsx
+
 import React, { useState, useEffect } from 'react';
 import GlassCard from '../common/GlassCard';
 import MagneticButton from '../common/MagneticButton';
