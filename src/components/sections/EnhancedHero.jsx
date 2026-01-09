@@ -168,7 +168,7 @@ export default function EnhancedHero() {
                   </div>
                   
                   {/* Floating tech icons around image */}
-                  <div className="absolute -top-4 -right-4 w-12 h-12 glass rounded-full flex items-center justify-center animate-bounce" style={{ animationDelay: '1s' }}>
+                  {/* <div className="absolute -top-4 -right-4 w-12 h-12 glass rounded-full flex items-center justify-center animate-bounce" style={{ animationDelay: '1s' }}>
                     <span className="text-2xl">⚛️</span>
                   </div>
                   <div className="absolute -bottom-4 -left-4 w-10 h-10 glass rounded-full flex items-center justify-center animate-bounce" style={{ animationDelay: '2s' }}>
@@ -176,7 +176,7 @@ export default function EnhancedHero() {
                   </div>
                   <div className="absolute top-1/4 -left-8 w-8 h-8 glass rounded-full flex items-center justify-center animate-bounce" style={{ animationDelay: '3s' }}>
                     <span className="text-lg">💻</span>
-                  </div>
+                  </div> */}
                 </div>
               </GlassCard>
 

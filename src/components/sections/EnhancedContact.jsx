@@ -551,7 +551,7 @@ export default function EnhancedContact() {
                   Start a Project
                 </MagneticButton>
                 <MagneticButton
-                  onClick={() => window.open('https://calendly.com/your-calendly-link', '_blank')}
+                  onClick={() => document.querySelector('#user_name')?.focus()}
                   variant="secondary"
                   size="lg"
                 >

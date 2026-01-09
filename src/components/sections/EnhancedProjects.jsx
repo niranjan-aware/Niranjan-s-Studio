@@ -1,3 +1,4 @@
+// src/components/sections/EnhancedProjects.jsx
 
 import React, { useState, useEffect } from 'react';
 import GlassCard from '../common/GlassCard';
@@ -5,7 +6,7 @@ import MagneticButton from '../common/MagneticButton';
 import ParallaxContainer from '../common/ParallaxContainer';
 import FloatingElements from '../effects/FloatingElements';
 import { useIntersection } from '../../hooks/useIntersection';
-import { ExternalLink, Github, Play, Info, X, Calendar, User } from 'lucide-react';
+import { ExternalLink, Github, Play, Info, X, Calendar, User, Award, Star } from 'lucide-react';
 
 export default function EnhancedProjects() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -16,6 +17,47 @@ export default function EnhancedProjects() {
   const projectsData = [
     {
       id: 1,
+      title: "Rajeshwari Pawar Portfolio",
+      subtitle: "Professional Portfolio Website",
+      description: "A stunning, modern portfolio website for a professional showcasing their work, skills, and achievements with seamless user experience and responsive design.",
+      longDescription: "Developed a comprehensive portfolio website featuring advanced animations, smooth navigation, project showcases, and contact integration. Built with modern web technologies ensuring optimal performance, SEO optimization, and cross-browser compatibility. Successfully delivered on time with 100% client satisfaction.",
+      image: "https://res.cloudinary.com/dlf06uxsc/image/upload/v1767983740/Screenshot_2026-01-10_at_12.03.18_AM_tryb2b.png",
+      images: [
+        "https://res.cloudinary.com/dlf06uxsc/image/upload/v1748940122/Screenshot_2025-06-03_at_2.11.15_PM_urfp48.png"
+      ],
+      stack: ["React", "Tailwind CSS", "Framer Motion", "React Router", "Vite", "EmailJS"],
+      category: "Client Project",
+      role: "Full Stack Developer",
+      duration: "2 months",
+      team: "Solo Project",
+      client: "Rajeshwari Pawar",
+      isClientProject: true,
+      successRate: 100,
+      links: {
+        live: "https://www.rajeshwaripawar.com/",
+        demo: "https://www.rajeshwaripawar.com/"
+      },
+      features: [
+        "Modern, responsive design across all devices",
+        "Smooth scroll animations and page transitions",
+        "Interactive project showcase with filtering",
+        "Integrated contact form with email notifications",
+        "SEO optimized for better visibility",
+        "Fast loading with optimized assets",
+        "Cross-browser compatible",
+        "Accessibility compliant (WCAG 2.1)"
+      ],
+      achievements: [
+        "100% client satisfaction rating",
+        "Delivered ahead of schedule",
+        "95+ PageSpeed Insights score",
+        "Zero post-launch bugs",
+        "Responsive across 20+ device types"
+      ],
+      gradient: "from-purple-500 to-pink-500"
+    },
+    {
+      id: 2,
       title: "Chatt Application",
       subtitle: "Real-time Communication Platform",
       description: "A sophisticated real-time chat application featuring user authentication, group creation, quick replies, notifications, and online status tracking with modern UI/UX design.",
@@ -47,7 +89,7 @@ export default function EnhancedProjects() {
       gradient: "from-blue-500 to-cyan-500"
     },
     {
-      id: 2,
+      id: 3,
       title: "Magnewin Harmonic Insights",
       subtitle: "Industrial Data Analytics Platform",
       description: "An advanced industrial data analysis solution that automates and visualizes 50+ key metrics for real-time insights and operational efficiency optimization.",
@@ -77,7 +119,7 @@ export default function EnhancedProjects() {
       gradient: "from-green-500 to-emerald-500"
     },
     {
-      id: 3,
+      id: 4,
       title: "Cryptify",
       subtitle: "Blockchain Document Verification",
       description: "A revolutionary blockchain-based certificate verification portal that reduces processing time from days to minutes with immutable security.",
@@ -104,10 +146,10 @@ export default function EnhancedProjects() {
         "Multi-institution support",
         "Decentralized storage"
       ],
-      gradient: "from-purple-500 to-pink-500"
+      gradient: "from-indigo-500 to-purple-500"
     },
     {
-      id: 4,
+      id: 5,
       title: "ConnectSpace",
       subtitle: "Communication Platform UI/UX",
       description: "Modern UI design for an all-in-one communication platform featuring secure chat, video calls, and team collaboration tools.",
@@ -137,7 +179,7 @@ export default function EnhancedProjects() {
       gradient: "from-orange-500 to-red-500"
     },
     {
-      id: 5,
+      id: 6,
       title: "Personal Portfolio Design",
       subtitle: "Modern Portfolio UI/UX",
       description: "A sleek, modern portfolio design showcasing projects, skills, and experience with cutting-edge UI trends and micro-interactions.",
@@ -164,7 +206,7 @@ export default function EnhancedProjects() {
         "Animation specifications",
         "Developer handoff ready"
       ],
-      gradient: "from-indigo-500 to-purple-500"
+      gradient: "from-pink-500 to-rose-500"
     }
   ];
 
@@ -303,11 +345,17 @@ export default function EnhancedProjects() {
                     </div>
                   </div>
 
-                  {/* Category Badge */}
-                  <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1 glass text-sm font-medium text-white rounded-full border border-white/20">
+                  {/* Badges */}
+                  <div className="absolute top-4 right-4 flex flex-col gap-2">
+                    {/* <span className="px-3 py-1 glass text-sm font-medium text-white rounded-full border border-white/20">
                       {project.category}
-                    </span>
+                    </span> */}
+                    {project.isClientProject && (
+                      <span className="px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-sm font-medium rounded-full flex items-center gap-1 shadow-lg">
+                        <Award className="w-3 h-3" />
+                        Client Project
+                      </span>
+                    )}
                   </div>
                 </div>
 
@@ -325,6 +373,16 @@ export default function EnhancedProjects() {
                   <p className="text-light-text-muted dark:text-dark-text-muted text-sm leading-relaxed">
                     {project.description}
                   </p>
+
+                  {/* Success Rate Badge for Client Projects */}
+                  {project.isClientProject && project.successRate && (
+                    <div className="flex items-center gap-2 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
+                      <Star className="w-5 h-5 text-green-600 dark:text-green-400 fill-current" />
+                      <span className="text-sm font-semibold text-green-700 dark:text-green-300">
+                        {project.successRate}% Success Rate
+                      </span>
+                    </div>
+                  )}
 
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2">
@@ -384,7 +442,7 @@ export default function EnhancedProjects() {
         <div className={`mt-16 grid grid-cols-1 md:grid-cols-4 gap-6 ${hasIntersected ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '800ms' }}>
           <GlassCard className="p-6 text-center" variant="strong">
             <div className="text-3xl font-bold bg-gradient-to-r from-light-primary to-blue-500 dark:from-dark-primary dark:to-blue-400 bg-clip-text text-transparent mb-2">
-              5+
+              {projectsData.length}+
             </div>
             <div className="text-sm text-light-text-muted dark:text-dark-text-muted">
               Projects Completed
@@ -393,10 +451,10 @@ export default function EnhancedProjects() {
 
           <GlassCard className="p-6 text-center" variant="strong">
             <div className="text-3xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent mb-2">
-              10+
+              {projectsData.filter(p => p.isClientProject).length}+
             </div>
             <div className="text-sm text-light-text-muted dark:text-dark-text-muted">
-              Technologies Used
+              Client Projects
             </div>
           </GlassCard>
 
@@ -447,13 +505,42 @@ export default function EnhancedProjects() {
                 </button>
 
                 <div className="absolute bottom-6 left-6 text-white">
-                  <h3 className="text-3xl font-bold mb-2">{selectedProject.title}</h3>
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="text-3xl font-bold">{selectedProject.title}</h3>
+                    {selectedProject.isClientProject && (
+                      <span className="px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-sm font-medium rounded-full flex items-center gap-1">
+                        <Award className="w-4 h-4" />
+                        Client Project
+                      </span>
+                    )}
+                  </div>
                   <p className="text-lg opacity-90">{selectedProject.subtitle}</p>
                 </div>
               </div>
 
               {/* Modal Content */}
               <div className="p-8 space-y-8">
+                {/* Client Project Achievement Banner */}
+                {selectedProject.isClientProject && selectedProject.successRate && (
+                  <GlassCard className="p-6 bg-gradient-to-r from-green-500/10 to-emerald-500/10 border-green-500/30" variant="subtle">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                          <Star className="w-8 h-8 text-white fill-current" />
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-bold text-light-text dark:text-dark-text">
+                            {selectedProject.successRate}% Success Rate
+                          </h4>
+                          <p className="text-light-text-muted dark:text-dark-text-muted">
+                            Delivered with excellence • Client: {selectedProject.client || 'Confidential'}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </GlassCard>
+                )}
+
                 {/* Project Info */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
@@ -477,6 +564,14 @@ export default function EnhancedProjects() {
                           <strong>Duration:</strong> {selectedProject.duration}
                         </span>
                       </div>
+                      {selectedProject.client && (
+                        <div className="flex items-center space-x-3">
+                          <Award className="w-5 h-5 text-light-primary dark:text-dark-primary" />
+                          <span className="text-sm text-light-text-muted dark:text-dark-text-muted">
+                            <strong>Client:</strong> {selectedProject.client}
+                          </span>
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -496,6 +591,30 @@ export default function EnhancedProjects() {
                     </ul>
                   </div>
                 </div>
+
+                {/* Achievements (for client projects) */}
+                {selectedProject.achievements && (
+                  <div>
+                    <h4 className="text-xl font-bold text-light-text dark:text-dark-text mb-4 flex items-center gap-2">
+                      <Award className="w-6 h-6 text-light-primary dark:text-dark-primary" />
+                      Key Achievements
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {selectedProject.achievements.map((achievement, idx) => (
+                        <GlassCard key={idx} className="p-4" variant="subtle">
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0">
+                              <Star className="w-4 h-4 text-white fill-current" />
+                            </div>
+                            <span className="text-sm text-light-text dark:text-dark-text">
+                              {achievement}
+                            </span>
+                          </div>
+                        </GlassCard>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* Tech Stack */}
                 <div>
