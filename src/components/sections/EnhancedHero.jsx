@@ -1,3 +1,4 @@
+// src/components/sections/EnhancedHero.jsx
 
 import React from 'react';
 import { TbFileDownload } from "react-icons/tb";
@@ -144,43 +145,38 @@ export default function EnhancedHero() {
             </div>
           </div>
 
-          {/* Profile Image Section */}
+          {/* Profile Image Section - Minimalist Rectangle */}
           <div className={`relative flex justify-center lg:justify-end ${hasIntersected ? 'animate-slide-up' : 'opacity-0 translate-y-20'}`} style={{ animationDelay: '200ms' }}>
             <div className="relative">
               
-              {/* Profile Image Container */}
-              <GlassCard
-                variant="strong"
-                className="p-6 hover:scale-105"
-                hover={false}
-              >
-                <div className="relative">
-                  {/* Glow effect behind image */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-light-primary/20 to-blue-500/20 dark:from-dark-primary/20 dark:to-blue-400/20 rounded-full blur-2xl animate-pulse"></div>
+              {/* Main Image Container - Clean Rectangle */}
+              <div className="relative group">
+                {/* Large dramatic shadow */}
+                <div className="absolute -inset-4 bg-gradient-to-br from-light-primary/30 via-blue-500/20 to-light-accent/30 dark:from-dark-primary/30 dark:via-blue-400/20 dark:to-dark-accent/30 rounded-2xl blur-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                
+                {/* Image wrapper with professional shadow */}
+                <div className="relative w-72 h-96 sm:w-80 sm:h-[28rem] lg:w-[22rem] lg:h-[30rem] rounded-2xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.6)] transform hover:scale-[1.02] transition-all duration-500">
                   
-                  {/* Main profile image */}
-                  <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
-                    <img
-                      src="https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574167/NiranjanSinhagad_jf7vtl.jpg"
-                      alt="Niranjan Aware - Full Stack Developer"
-                      className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
-                    />
-                  </div>
+                  {/* Subtle gradient overlay for depth */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent z-10"></div>
                   
-                  {/* Floating tech icons around image */}
-                  {/* <div className="absolute -top-4 -right-4 w-12 h-12 glass rounded-full flex items-center justify-center animate-bounce" style={{ animationDelay: '1s' }}>
-                    <span className="text-2xl">⚛️</span>
-                  </div>
-                  <div className="absolute -bottom-4 -left-4 w-10 h-10 glass rounded-full flex items-center justify-center animate-bounce" style={{ animationDelay: '2s' }}>
-                    <span className="text-xl">🚀</span>
-                  </div>
-                  <div className="absolute top-1/4 -left-8 w-8 h-8 glass rounded-full flex items-center justify-center animate-bounce" style={{ animationDelay: '3s' }}>
-                    <span className="text-lg">💻</span>
-                  </div> */}
+                  {/* Professional border */}
+                  <div className="absolute inset-0 border border-white/10 dark:border-white/5 rounded-2xl z-20"></div>
+                  
+                  {/* Profile Image */}
+                  <img
+                    src="https://res.cloudinary.com/dlf06uxsc/image/upload/v1748574167/NiranjanSinhagad_jf7vtl.jpg"
+                    alt="Niranjan Aware - Full Stack Developer"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  />
+                  
+                  {/* Corner accent - subtle professional touch */}
+                  <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-light-primary/70 dark:border-dark-primary/90 rounded-tr-2xl"></div>
+                  <div className="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-light-primary/70 dark:border-dark-primary/90 rounded-bl-2xl"></div>
                 </div>
-              </GlassCard>
+              </div>
 
-              {/* Parallax background elements */}
+              {/* Background decorative elements */}
               <ParallaxContainer speed={0.3} className="absolute -z-10 -top-20 -right-20">
                 <div className="w-40 h-40 bg-gradient-to-br from-light-accent/10 to-orange-500/10 dark:from-dark-accent/10 dark:to-orange-400/10 rounded-full blur-3xl"></div>
               </ParallaxContainer>
@@ -188,6 +184,15 @@ export default function EnhancedHero() {
               <ParallaxContainer speed={-0.2} className="absolute -z-10 -bottom-20 -left-20">
                 <div className="w-32 h-32 bg-gradient-to-br from-light-primary/10 to-blue-500/10 dark:from-dark-primary/10 dark:to-blue-400/10 rounded-full blur-2xl"></div>
               </ParallaxContainer>
+
+              {/* Professional info badge */}
+              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 z-30">
+                <div className="glass px-6 py-3 rounded-full border border-light-primary/20 dark:border-dark-primary/20 shadow-lg">
+                  <p className="text-sm font-semibold text-light-text dark:text-dark-text whitespace-nowrap">
+                    Full Stack Developer
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
